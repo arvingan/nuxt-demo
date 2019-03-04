@@ -2,7 +2,7 @@
 	<section class="container">
 		<div>
 			<app-logo></app-logo>
-			<div>{{info.demo}}</div>
+			<div>本地渲染数据：{{info}}</div>
 			<div><button @click="addcounter">+</button><button @click="delcounter">-</button></div>
 		</div>
 	</section>
@@ -42,35 +42,17 @@
 		},
 		mounted() {
 			this.testFun();
+			//this.getAjaxDemo();
 
 		},
 		created() {
 
 		},
-		async asyncData() {
-//			const cookieValObject = { param1: 'value1', param2: 'value2' }
-// 
-//			// server
-//			app.$cookies.set('cookie-name', 'cookie-value', {
-//			  path: '/',
-//			  maxAge: 60 * 60 * 24 * 7
-//			});
-//			const cookieRes = app.$cookies.get('cookie-name');
-//			return {
-//				cookieRes: cookieRes
-//			}
-//			this.axiosFun('bins/haz1y', 'get').then(res => {
-//					console.log(res);
-//					this.data = res;
-//				}), err => {
-//					console.log(err);
-//				}
-			let {
-				data
-			} = await axios.get('http://api.myjson.com/bins/haz1y')
-			return {
-				info: data
-			}
+		async asyncData({app}) {
+			
+			let {data} = await app.$axios.get('http://api.myjson.com/bins/haz1y');
+			console.log('1')
+			return {info: data}
 		}
 	}
 </script>

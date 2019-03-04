@@ -1,11 +1,13 @@
 <template>
 	<div>
-		home <h2>homeid:{{$route.params.homeid}}</h2>
+		userindex
 	</div>
 </template>
 
 <script>
-	export default {}
+	export default {
+		
+	}
 </script>
 
 <style>

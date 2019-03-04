@@ -1,6 +1,8 @@
 <template>
 	<div>
-		home <h2>homeid:{{$route.params.homeid}}</h2>
+		list 
+		<h2>page:{{$route.query.page}}</h2>
+		<h2>limit:{{$route.query.limit}}</h2>
 	</div>
 </template>
 

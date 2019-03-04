@@ -1,6 +1,8 @@
 var localhostConfigJs = require("./config/localhost-config.js");
 var pluginsConfig = require("./plugins/plugins-config.js");
 
+
+
 module.exports = {
   /*
   ** Headers of the page
@@ -49,6 +51,13 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  modules: [
+    // Simple usage
+    'cookie-universal-nuxt',
+ 
+    // With options
+    ['cookie-universal-nuxt', { alias: 'cookiz' }],
+ ]
 }
 

@@ -1,6 +1,6 @@
-import Vue from 'vue'
+import vue from 'vue'
 
 
-Vue.prototype.testFun =function(){
+vue.prototype.testFun =function(){
 	console.log("测试插件testFun")
 }
